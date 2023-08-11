@@ -13,6 +13,8 @@ confirm_password=constants.confirm_password
 invalid_email=constants.invalid_email
 invalid_phone=constants.invalid_phone
 wrong_password=constants.wrong_password
+gmail=constants.g_mail
+g_pass=constants.g_password
 
 @pytest.mark.usefixtures("setup")
 class Test_Signup:
@@ -36,6 +38,11 @@ class Test_Signup:
         object = Sign_Up(self.driver)
         object.sign_up(name,last_name,email,phone,password,wrong_password)
         self.driver.save_screenshot('./reports/screenshots/signup_page/password_do_not_match.png')
+
+    def test_google_signup(self):
+        object = Sign_Up(self.driver)
+        object.google_signup(gmail,g_pass)
+
 
 
 

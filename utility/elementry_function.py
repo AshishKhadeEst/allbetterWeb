@@ -9,11 +9,11 @@ class Elem_Func:
 
     def find_element(self,locator_tuple):
         try:
-            element = WebDriverWait(self.driver, 20, poll_frequency=1).until(
-                EC.presence_of_element_located(locator_tuple))
+            element = WebDriverWait(self.driver, 10, poll_frequency=1).until(
+                EC.element_to_be_clickable(locator_tuple))
             return element
         except:
-            self.driver.save_screenshot('./reports/screenshots/failed_cases/failed_test.png1')
+            self.driver.save_screenshot('./reports/screenshots/failed_cases/failed_test.png')
             raise
 
     def mouse_hover(self, locator_tuple):
