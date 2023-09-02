@@ -1,11 +1,12 @@
 #Login credentials
 
-username = "ashishkhade+1@encoresky.com"
+username = "ashish.khade+1@encoresky.com"
 password = "Test@123"
 invalid_username = "Admin"
 invalid_password = "Admin12"
 google_email = "samjr.989303@gmail.com"
 google_password = "Test@123"
+wrong_username="ashishkhade012@gmail.com"
 
 # sigup_credentials
 
