@@ -7,7 +7,7 @@ class Login(Base):
 
     Email=(By.NAME,"email")
     Password=(By.NAME,"password")
-    Submit=(By.XPATH,"//button[normalize-space()='Submit']")
+    Submit=(By.XPATH,"//button[normalize-space()='Log In']")
     forgot_password=(By.XPATH,"//a[contains(text(),'Forgot password?')]")
     send_email=(By.XPATH,"//button[normalize-space()='Send Email']")
     google_signin=(By.XPATH,"//button[@type='button']")
@@ -17,6 +17,8 @@ class Login(Base):
     google_password=(By.XPATH,"//input[@name='password']")
     checkbox=(By.XPATH,"//input[@type='checkbox']")
     next=(By.XPATH,"//span[normalize-space()='Next']")
+    wrong_user=(By.CLASS_NAME,"notification-description")
+    wrong_password=(By.CLASS_NAME,"notification-description")
 
     def locate_elements(self,username,password):
         self.EF.find_element(self.Email).send_keys(username)
@@ -52,6 +54,16 @@ class Login(Base):
         time.sleep(3)
         self.EF.find_element(self.Email).send_keys(username)
         self.EF.find_element(self.send_email).click()
+
+    def msg_for_wrong_user(self):
+        return self.EF.find_element(self.wrong_user).text
+
+    def msg_for_wrong_password(self):
+        return self.EF.find_element(self.wrong_password).text
+
+
+
+
 
 
 
