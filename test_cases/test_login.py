@@ -1,9 +1,9 @@
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
 from page_objects.login import Login
 from page_objects import constants
 import pytest
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from webdriver_manager.chrome import ChromeDriverManager
 
 user_name=constants.username
 gmail=constants.google_email
@@ -14,7 +14,7 @@ invalid_password=constants.invalid_password
 class Test_login:
 
     def setup(self):
-        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager(version='114.0.5735.90').install()))
+        self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
         self.driver.get("https://field-test.allbetterapp.com/")
         self.driver.maximize_window()
 
@@ -39,7 +39,7 @@ class Test_login:
         lg = Login(self.driver)
         lg.locate_elements(user_name, invalid_password)
         expected_msg = "Incorrect password."
-        actual_msg = lg.msg_for_wrong_user()
+        actual_msg = lg.msg_for_wrong_password()
         assert expected_msg == actual_msg
         print(actual_msg)
 

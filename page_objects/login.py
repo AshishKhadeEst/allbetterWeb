@@ -2,9 +2,11 @@ from page_objects.base import Base
 from selenium.webdriver.common.by import By
 import time
 from selenium.webdriver.common.action_chains import ActionChains
+from utility.elementary_function import Elem_Func
 
 class Login(Base):
 
+    log= Elem_Func.custom_logger()
     Email=(By.NAME,"email")
     Password=(By.NAME,"password")
     Submit=(By.XPATH,"//button[normalize-space()='Log In']")
@@ -54,12 +56,15 @@ class Login(Base):
         time.sleep(3)
         self.EF.find_element(self.Email).send_keys(username)
         self.EF.find_element(self.send_email).click()
+        self.log.info("Forgot Password success")
 
     def msg_for_wrong_user(self):
         return self.EF.find_element(self.wrong_user).text
 
     def msg_for_wrong_password(self):
+        self.log.info("Message for wrong Password")
         return self.EF.find_element(self.wrong_password).text
+
 
 
 

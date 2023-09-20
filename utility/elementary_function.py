@@ -1,6 +1,7 @@
 from selenium.webdriver import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+import logging
 
 class Elem_Func:
 
@@ -20,4 +21,20 @@ class Elem_Func:
         element = self.find_element(locator_tuple)
         actions = ActionChains(self.driver)
         actions.move_to_element(element).perform()
+
+    def custom_logger():
+
+            logger = logging.getLogger(__name__)
+            logger.setLevel(logging.DEBUG)
+            formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(name)s : %(message)s',
+                                          datefmt='%d/%m/%Y %I:%M:%S')
+            fh = logging.FileHandler(filename="Automation_log.log")
+            fh.setFormatter(formatter)
+            logger.addHandler(fh)
+            return logger
+
+
+
+
+
 
