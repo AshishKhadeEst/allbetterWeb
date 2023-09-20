@@ -1,11 +1,10 @@
-from selenium.webdriver.common.by import By
-from utility.elementry_function import Elem_Func
+from utility.elementary_function import Elem_Func
 
 class Base:
+
     def __init__(self,driver):
         self.driver=driver
-        self.EF=Elem_Func(self.driver)
-
+        self.EF= Elem_Func(self.driver)
 
     # def click_user_profile(self):
 
