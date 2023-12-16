@@ -1,22 +1,33 @@
 from utility.elementary_function import Elem_Func
+from selenium.webdriver.common.by import By
 
 class Base:
 
-    def __init__(self,driver):
-        self.driver=driver
-        self.EF= Elem_Func(self.driver)
+    def __init__(self, driver):
+        self.driver = driver
+        self.EF = Elem_Func(self.driver)
 
-    # def click_user_profile(self):
+    client = (By.XPATH, "//span[normalize-space()='Client']")
+    requests = (By.XPATH,"//span[normalize-space()='Request']")
+    quotation = (By.XPATH,"//span[normalize-space()='Quotation']")
+    job = (By.XPATH,"//span[normalize-space()='Job']")
+    invoice = (By.XPATH,"//span[normalize-space()='Invoice']")
+    task = (By.XPATH,"//span[normalize-space()='Task']")
 
-    # def click_logout_link(self):
+    def click_on_client(self):
+        self.EF.find_element(self.client).click()
 
-    # def logout(self):
-    #     self.click_user_profile()
-    #     self.click_logout_link()
+    def click_on_request(self):
+        self.EF.find_element(self.requests).click()
 
-    # def navigate_to_tab(self,tab_link):
+    def click_on_quotation(self):
+        self.EF.find_element(self.quotation).click()
 
+    def click_on_job(self):
+        self.EF.find_element(self.job).click()
 
+    def click_on_invoice(self):
+        self.EF.find_element(self.invoice).click()
 
-
-
+    def click_on_task(self):
+        self.EF.find_element(self.task).click()

@@ -13,14 +13,14 @@ Password=constants.password
 invalid_password=constants.invalid_password
 class Test_login:
 
-    def setup(self):
+    def setUP_method(self):
         self.driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
         self.driver.get("https://field-test.allbetterapp.com/")
         self.driver.maximize_window()
 
     test_data = [["ashish.kahde+1@encoresky.com", "Test@123"],
                  ["ashish.khade+1@gmail.", "Test@123"],
-                 ["ashish.khade+1@encoresky.com", "test123"]]
+                 ["ashish.khade+1@encoresky.com", "t123"]]
 
     @pytest.mark.parametrize("username, password", test_data)
     def test_login(self,username,password):

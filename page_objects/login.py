@@ -64,6 +64,23 @@ class Login(Base):
     def msg_for_wrong_password(self):
         self.log.info("Message for wrong Password")
         return self.EF.find_element(self.wrong_password).text
+# @decorator
+# def login(setup,user=None,*args,**kwargs):
+#     page=setup
+#     base_page=Base(page)
+#     base_page.EF.find_element(Email).send_keys(user)
+#     base_page.EF.find_element(Password).send_keys(user)
+#     base_page.EF.find_element(Submit).click()
+#     result=setup(*args,**kwargs)
+#     return result
+
+
+
+
+
+
+
+
 
 
 

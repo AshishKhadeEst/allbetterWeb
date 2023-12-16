@@ -14,8 +14,8 @@ class Elem_Func:
                 EC.element_to_be_clickable(locator_tuple))
             return element
         except:
-            self.driver.save_screenshot('./reports/screenshots/failed_cases/failed_test.png')
-            raise
+            screenshot=self.driver.save_screenshot('./reports/screenshots/failed_cases/failed_test.png')
+            return screenshot
 
     def mouse_hover(self, locator_tuple):
         element = self.find_element(locator_tuple)
