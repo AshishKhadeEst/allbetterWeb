@@ -13,6 +13,11 @@ class Base:
     job = (By.XPATH,"//span[normalize-space()='Job']")
     invoice = (By.XPATH,"//span[normalize-space()='Invoice']")
     task = (By.XPATH,"//span[normalize-space()='Task']")
+    crm_button=(By.XPATH,"//body[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/nav[1]/div[2]/ul[1]/div[1]/div[1]")
+    notes=(By.XPATH,"//span[normalize-space()='Notes']")
+    settings=(By.XPATH,"//span[contains(text(),'Settings')]")
+    employees=(By.XPATH,"//span[normalize-space()='Employees']")
+    product_and_services=(By.XPATH,"//span[normalize-space()='Products & Services']")
 
     def click_on_client(self):
         self.EF.find_element(self.client).click()
@@ -31,3 +36,11 @@ class Base:
 
     def click_on_task(self):
         self.EF.find_element(self.task).click()
+
+    def click_on_notes(self):
+        self.EF.find_element(self.notes).click()
+
+    def click_on_crm(self):
+        self.EF.find_element(self.crm_button).click()
+
+
