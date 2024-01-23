@@ -26,6 +26,7 @@ class Login(Base):
         self.EF.find_element(self.Email).send_keys(username)
         self.EF.find_element(self.Password).send_keys(password)
         self.EF.find_element(self.Submit).click()
+        self.driver.close()
 
     def google_login(self,email,password):
         actions=ActionChains(self.driver)
@@ -49,6 +50,7 @@ class Login(Base):
         self.EF.find_element(self.google_password).send_keys(password)
         self.EF.find_element(self.checkbox).click()
         self.EF.find_element(self.next).click()
+        self.driver.close()
 
     def forgot_pass_word(self,username):
 
@@ -57,6 +59,7 @@ class Login(Base):
         self.EF.find_element(self.Email).send_keys(username)
         self.EF.find_element(self.send_email).click()
         self.log.info("Forgot Password success")
+        self.driver.close()
 
     def msg_for_wrong_user(self):
         return self.EF.find_element(self.wrong_user).text
@@ -64,15 +67,7 @@ class Login(Base):
     def msg_for_wrong_password(self):
         self.log.info("Message for wrong Password")
         return self.EF.find_element(self.wrong_password).text
-# @decorator
-# def login(setup,user=None,*args,**kwargs):
-#     page=setup
-#     base_page=Base(page)
-#     base_page.EF.find_element(Email).send_keys(user)
-#     base_page.EF.find_element(Password).send_keys(user)
-#     base_page.EF.find_element(Submit).click()
-#     result=setup(*args,**kwargs)
-#     return result
+
 
 
 

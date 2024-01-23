@@ -83,6 +83,7 @@ class Add_request(Base):
         actions.scroll_by_amount(0,100).perform()
         self.EF.find_element(self.morning).click()
         self.EF.find_element(self.save).click()
+        self.driver.close()
 
     def edit_request(self):
         self.click_on_request()
@@ -112,12 +113,14 @@ class Add_request(Base):
         self.EF.find_element(self.new_date).click()
         self.EF.find_element(self.visit_time).click()
         self.EF.find_element(self.save).click()
+        self.driver.close()
 
     def check_search(self,client_name):
         self.click_on_request()
         self.EF.find_element(self.search_option).send_keys(client_name)
         actions=ActionChains(self.driver)
         actions.scroll_by_amount(0,300).perform()
+        self.driver.close()
 
     def check_filter(self):
         self.click_on_request()
@@ -131,6 +134,7 @@ class Add_request(Base):
         self.EF.find_element(self.converted).click()
         actions=ActionChains(self.driver)
         actions.scroll_by_amount(0,100).perform()
+        self.driver.close()
 
     def check_convert_to_quote(self):
         self.click_on_request()
@@ -149,6 +153,7 @@ class Add_request(Base):
         actions.scroll_by_amount(0,100).perform()
         self.EF.find_element(self.client_message).click()
         self.EF.find_element(self.save_b).click()
+        self.driver.close()
 
     def check_convert_to_job(self):
         self.click_on_request()
@@ -162,6 +167,7 @@ class Add_request(Base):
         self.EF.find_element(self.add_line_items).click()
         self.EF.find_element(self.cleaners).click()
         self.EF.find_element(self.save_b).click()
+        self.driver.close()
 
     def check_archieve(self):
         self.click_on_request()
@@ -170,6 +176,7 @@ class Add_request(Base):
         self.EF.find_element(self.eye_click).click()
         self.EF.find_element(self.actions).click()
         self.EF.find_element(self.archived).click()
+        self.driver.close()
 
     def check_request_completed(self):
         self.click_on_request()
@@ -178,6 +185,7 @@ class Add_request(Base):
         self.EF.find_element(self.eye_click).click()
         self.EF.find_element(self.actions).click()
         self.EF.find_element(self.mark_complete).click()
+        self.driver.close()
 
 
 

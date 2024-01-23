@@ -42,6 +42,7 @@ class Sign_Up(Base):
         self.EF.find_element(self.password).send_keys(password)
         self.EF.find_element(self.confirm_password).send_keys(confirm_pass)
         self.EF.find_element(self.submit).click()
+        self.driver.close()
 
     def google_signup(self,gmail,password):
         self.EF.find_element(self.signup).click()
@@ -64,6 +65,7 @@ class Sign_Up(Base):
         self.EF.find_element(self.next_button).click()
         self.EF.find_element(self.g_password).send_keys(password)
         self.EF.find_element(self.next_button).click()
+        self.driver.close()
 
 
 

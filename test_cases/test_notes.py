@@ -6,6 +6,7 @@ import pytest
 @pytest.mark.usefixtures("setup")
 class Test_Add_Notes:
 
+
     def test_add_notes(self):
         object=Add_Notes(self.driver)
         object.add_notes()
@@ -14,4 +15,5 @@ class Test_Add_Notes:
     def test_edit_notes(self):
         object=Add_Notes(self.driver)
         object.edit_notes()
+
 

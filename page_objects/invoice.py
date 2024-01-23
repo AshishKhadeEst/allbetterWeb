@@ -62,6 +62,7 @@ class Add_Invoice(Base):
         actions.scroll_by_amount(0,100).perform()
         self.EF.find_element(self.client_message).send_keys("No message now")
         self.EF.find_element(self.save).click()
+        self.driver.close()
 
     def edit_invoice(self):
         self.click_on_invoice()
@@ -83,6 +84,7 @@ class Add_Invoice(Base):
         edit_client_message.send_keys(Keys.BACKSPACE*50)
         edit_client_message.send_keys("We have a invoice for you")
         self.EF.find_element(self.save).click()
+        self.driver.close()
 
     def check_collect_deposite(self):
         self.click_on_invoice()
@@ -91,6 +93,7 @@ class Add_Invoice(Base):
         self.EF.find_element(self.collect_deposite).click()
         self.EF.find_element(self.notes).send_keys("No comment")
         self.EF.find_element(self.collect_deposite_button).click()
+        self.driver.close()
 
     def check_review_and_send(self):
         self.click_on_invoice()
@@ -100,6 +103,7 @@ class Add_Invoice(Base):
         self.EF.find_element(self.next_button).click()
         self.EF.find_element(self.email).send_keys("ashishkhade11@gmail.com")
         self.EF.find_element(self.send_button).click()
+        self.driver.close()
 
     def check_collect_signature(self):
         self.click_on_invoice()
@@ -109,6 +113,7 @@ class Add_Invoice(Base):
         self.EF.find_element(self.signature_box).click()
         self.EF.find_element(self.save_button).click()
         self.EF.find_element(self.next_button).click()
+        self.driver.close()
 
 
 

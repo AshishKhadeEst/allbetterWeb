@@ -57,6 +57,7 @@ class Add_Task(Base):
         self.EF.find_element(self.done).click()
         action.scroll_by_amount(0, 100).perform()
         self.EF.find_element(self.save_button).click()
+        self.driver.close()
 
     def edit_task(self):
         self.click_on_task()
@@ -85,17 +86,20 @@ class Add_Task(Base):
         self.EF.find_element(self.name_client).click()
         self.EF.find_element(self.done).click()
         self.EF.find_element(self.save_button).click()
+        self.driver.close()
 
     def check_mark_completed(self):
         self.click_on_task()
         self.EF.find_element(self.eye_symbol).click()
         self.EF.find_element(self.action_button).click()
         self.EF.find_element(self.mark_completed).click()
+        self.driver.close()
 
     def check_back_button(self):
         self.click_on_task()
         self.EF.find_element(self.add_task).click()
         self.EF.find_element(self.back_button).click()
+        self.driver.close()
 
 
 

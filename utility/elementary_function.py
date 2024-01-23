@@ -17,6 +17,15 @@ class Elem_Func:
             screenshot=self.driver.save_screenshot('./reports/screenshots/failed_cases/failed_test.png')
             return screenshot
 
+    def find_elements(self, locator_tuple):
+        try:
+            element = WebDriverWait(self.driver, 10, poll_frequency=1).until(
+                EC.visibility_of_all_elements_located((locator_tuple)))
+            return element
+        except:
+            screenshot = self.driver.save_screenshot('./reports/screenshots/failed_cases/failed_test.png')
+            return screenshot
+
     def mouse_hover(self, locator_tuple):
         element = self.find_element(locator_tuple)
         actions = ActionChains(self.driver)

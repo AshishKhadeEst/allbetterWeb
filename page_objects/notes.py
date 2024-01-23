@@ -1,8 +1,9 @@
+import time
 from page_objects.base import Base
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
-
+import pyautogui
 
 class Add_Notes(Base):
 
@@ -11,7 +12,7 @@ class Add_Notes(Base):
     client_name=(By.XPATH,"//h6[normalize-space()='Ashish kumar khade']")
     address=(By.XPATH,"//span[contains(text(),'Nanda nagar street number 12 Third floor, Indore, ')]")
     description=(By.XPATH,"//textarea[@placeholder='Type notes here']")
-    file_upload=(By.XPATH,"//input[@type='file']")
+    file_upload=(By.XPATH,"//div[@class='upload upload-draggable hover:border-indigo-600 min-h-fit']")
     quote=(By.XPATH,"//span[normalize-space()='Quote']")
     requests=(By.XPATH,"//span[normalize-space()='Request']")
     job=(By.XPATH,"//span[normalize-space()='Job']")
@@ -29,6 +30,13 @@ class Add_Notes(Base):
         self.EF.find_element(self.client_name).click()
         self.EF.find_element(self.address).click()
         self.EF.find_element(self.description).send_keys("Adding a new notes through automation")
+        input_files=self.EF.find_element(self.file_upload)
+        image_path=r'C:\Users\Quick\Desktop\profile_image.jpg'
+        input_files.click()
+        time.sleep(3)
+        pyautogui.write(image_path)
+        pyautogui.press('enter')
+        time.sleep(3)
         self.EF.find_element(self.quote).click()
         self.EF.find_element(self.requests).click()
         self.EF.find_element(self.job).click()
@@ -45,6 +53,12 @@ class Add_Notes(Base):
         edit_description=self.EF.find_element(self.description)
         edit_description.send_keys(Keys.BACKSPACE*60)
         edit_description.send_keys("New description for the notes")
+        input_files = self.EF.find_element(self.file_upload)
+        image_path = r'C:\Users\Quick\Desktop\profile_image.jpg'
+        input_files.click()
+        time.sleep(3)
+        pyautogui.write(image_path)
+        pyautogui.press('enter')
         self.EF.find_element(self.quote).click()
         self.EF.find_element(self.task).click()
         actions=ActionChains(self.driver)

@@ -79,6 +79,7 @@ class Add_job(Base):
         self.EF.find_element(self.product).click()
         self.EF.find_element(self.taxable_product).click()
         self.EF.find_element(self.save_button).click()
+        self.driver.close()
 
     def edit_job(self):
         self.click_on_job()
@@ -95,6 +96,7 @@ class Add_job(Base):
         self.EF.find_element(self.add_line_items).click()
         self.EF.find_element(self.movers).click()
         self.EF.find_element(self.update).click()
+        self.driver.close()
 
     def collect_the_signature(self):
         self.click_on_job()
@@ -104,17 +106,20 @@ class Add_job(Base):
         self.EF.find_element(self.text_field).click()
         self.EF.find_element(self.save_b).click()
         self.EF.find_element(self.next_button).click()
+        self.driver.close()
 
     def complete_job(self):
         self.click_on_job()
         self.EF.find_element(self.eye_symbol).click()
         self.EF.find_element(self.actions).click()
         self.EF.find_element(self.job_completed).click()
+        self.driver.close()
 
     def check_back_button(self):
         self.click_on_job()
         self.EF.find_element(self.eye_symbol).click()
         self.EF.find_element(self.back_button).click()
+        self.driver.close()
 
 
 

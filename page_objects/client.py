@@ -67,6 +67,7 @@ class Add_client(Base):
         self.EF.find_element(self.autoselect).click()
         self.EF.find_element(self.street_2).send_keys("Second floor")
         self.EF.find_element(self.save).click()
+        self.driver.close()
 
     def edit_client(self):
         self.click_on_client()
@@ -100,11 +101,13 @@ class Add_client(Base):
         edit_street_2.send_keys(Keys.BACKSPACE*16)
         edit_street_2.send_keys("Ground Floor")
         self.EF.find_element(self.save).click()
+        self.driver.close()
 
     def check_back_button(self):
         self.click_on_client()
         self.EF.find_element(self.name).click()
         self.EF.find_element(self.back_button).click()
+        self.driver.close()
 
     def client_search_box(self,client_name):
         self.click_on_client()
@@ -112,6 +115,7 @@ class Add_client(Base):
         actions=ActionChains(self.driver)
         actions.scroll_by_amount(10,100).perform()
         time.sleep(3)
+        self.driver.close()
 
 
 
